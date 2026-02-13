@@ -4,6 +4,7 @@ import os
 
 load_dotenv()
 
+
 @dataclass
 class Settings:
     DATABASE_URL: str = os.getenv("DATABASE_URL")
@@ -12,5 +13,6 @@ class Settings:
     DUMP_TIME: str = os.getenv("DUMP_TIME", "12:05")
     CONCURRENT_REQUESTS: int = int(os.getenv("CONCURRENT_REQUESTS", 30))
     BATCH_SIZE: int = int(os.getenv("BATCH_SIZE", 10))
+
 
 settings = Settings()
